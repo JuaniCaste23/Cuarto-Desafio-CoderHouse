@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CartelDeEntradaService } from 'src/app/services/cartel-de-entrada.service';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-cliente-seba',
@@ -8,5 +9,11 @@ import { CartelDeEntradaService } from 'src/app/services/cartel-de-entrada.servi
 })
 export class ClienteSebaComponent {
   constructor(public CartelDeEntradaService: CartelDeEntradaService) {
-    this.CartelDeEntradaService.avisos$.subscribe(console.log)
+    this.CartelDeEntradaService.avisos$
+    .pipe(
+      map(() => 'mapinnn')
+    )
+    .subscribe((value) => {
+      console.log(`METODO MAP: ${value}`)
+    })
 }}

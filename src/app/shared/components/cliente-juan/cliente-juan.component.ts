@@ -15,9 +15,9 @@ export class ClienteJuanComponent{
       this.ngOnDestroy()
     }
 
-    ngOnDestroy(): void {
-      this.obsSubscription.unsubscribe();
-      console.log("se destruyo observable")
+    ngOnDestroy() :void {
+      this.obsSubscription.unsubscribe()
+      console.log("METODO ONDESTROY: se destruyo observable")
     }
    //remueve la subscricion al subject con ondestroy
 }
